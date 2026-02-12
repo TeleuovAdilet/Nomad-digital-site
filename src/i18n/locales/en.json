@@ -1,0 +1,133 @@
+{
+  "nav": {
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "process": "How We Work",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "🚀 Your Digital Partner",
+    "title": "Website Development",
+    "titleGradient": "and Telegram Bots",
+    "subtitle": "We create Telegram bots, business card websites, landing pages and web applications. Help your business reach a new level with modern IT solutions.",
+    "ctaPrimary": "Discuss Project",
+    "ctaSecondary": "Our Work",
+    "stats": {
+      "projects": "Projects",
+      "experience": "Years Experience",
+      "clients": "Clients",
+      "support": "Support"
+    }
+  },
+  "services": {
+    "title": "What We Do",
+    "subtitle": "Full development cycle: from idea to launch",
+    "telegramBots": {
+      "title": "Telegram Bots",
+      "description": "Business automation through messenger. From simple chatbots to complex payment and CRM systems.",
+      "features": {
+        "payments": "Payment Processing",
+        "crm": "CRM Integration",
+        "mailing": "Newsletters",
+        "analytics": "Analytics"
+      }
+    },
+    "websites": {
+      "title": "Websites & Landing Pages",
+      "description": "Modern business card websites and converting landing pages. Fast loading, responsive, SEO-optimized.",
+      "features": {
+        "responsive": "Responsive Design",
+        "seo": "SEO Optimization",
+        "fast": "Fast Loading",
+        "forms": "Contact Forms"
+      }
+    },
+    "webApps": {
+      "title": "Web Applications",
+      "description": "Complex SPAs on React. Control panels, CRM systems, online services turnkey.",
+      "features": {
+        "react": "React + TypeScript",
+        "api": "REST API",
+        "auth": "Authentication",
+        "admin": "Admin Panels"
+      }
+    },
+    "design": {
+      "title": "UI/UX Design",
+      "description": "Thoughtful interface that converts. Prototypes, mockups, design systems.",
+      "features": {
+        "tools": "Figma/Sketch",
+        "prototype": "Prototyping",
+        "animations": "Animations",
+        "system": "Design System"
+      }
+    }
+  },
+  "portfolio": {
+    "title": "Our Work",
+    "subtitle": "Projects we're proud of",
+    "items": {
+      "ecommerce": {
+        "title": "E-commerce Bot",
+        "category": "Telegram Bot",
+        "description": "Sales automation via Telegram with payment integration"
+      },
+      "corporate": {
+        "title": "Corporate Website",
+        "category": "Website",
+        "description": "Modern website for IT company with interactive elements"
+      },
+      "crm": {
+        "title": "CRM System",
+        "category": "Web App",
+        "description": "Customer management panel with analytics and reports"
+      }
+    }
+  },
+  "process": {
+    "title": "How We Work",
+    "subtitle": "Transparent process from idea to launch",
+    "steps": {
+      "discussion": {
+        "title": "Discussion",
+        "description": "We study your tasks and goals, form technical specifications"
+      },
+      "development": {
+        "title": "Development",
+        "description": "We create design and write code with regular demonstrations"
+      },
+      "testing": {
+        "title": "Testing",
+        "description": "We check all functions, fix bugs, optimize"
+      },
+      "launch": {
+        "title": "Launch",
+        "description": "Deploy to hosting, domain setup, project handover"
+      }
+    }
+  },
+  "tech": {
+    "title": "Technologies We Work With"
+  },
+  "contact": {
+    "title": "Ready to Start?",
+    "subtitle": "We build modern digital solutions for businesses.\nWe develop websites, landing pages, web applications of any complexity, as well as Telegram bots and mobile applications, and automate business processes.\nOur solutions help improve customer engagement, streamline operations, and increase business efficiency through technology.",
+    "form": {
+      "name": "Your Name",
+      "phone": "+1 234 567 89 00",
+      "message": "Comment (what service interests you)",
+      "submit": "Get Consultation",
+      "submitting": "Sending...",
+      "privacy": "By clicking the button, you agree to the privacy policy",
+      "success": "Thank you! We will contact you shortly."
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "links": {
+      "telegram": "Telegram",
+      "whatsapp": "WhatsApp",
+      "email": "Email"
+    }
+  }
+}

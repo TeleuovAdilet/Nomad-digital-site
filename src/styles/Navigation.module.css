@@ -1,0 +1,360 @@
+/* src/components/Navigation/Navigation.module.css */
+
+.navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background: rgba(2, 6, 23, 0.95);
+    backdrop-filter: blur(20px);
+    transition: all var(--transition-base);
+
+    padding: 0.35rem 0;   /* ВОТ ЭТО ВАЖНО */
+    border-bottom: none;  /* убираем линию отсюда */
+}
+
+.navigation::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.navigation.hidden {
+    transform: translateY(-100%);
+}
+
+.navContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-height: none;
+    padding: 0.65rem 1.5rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    text-decoration: none;
+    transition: transform var(--transition-base);
+}
+
+.logo:hover {
+    transform: scale(1.02);
+}
+
+.logoIcon {
+    width: 2.75rem;
+    height: 2.75rem;
+    background: var(--gradient-primary);
+    border-radius: 0.875rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);
+}
+
+.logoText {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: var(--font-display);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.navLinks {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.navLink {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all var(--transition-base);
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.navLink::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gradient-primary);
+    transition: width 0.3s ease;
+}
+
+.navLink:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
+.navLink:hover::after {
+    width: 100%;
+}
+
+/* Language Dropdown - Улучшенный дизайн */
+.languageDropdown {
+    position: relative;
+}
+
+.langButton {
+    padding: 0.625rem 1.125rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1.5px solid rgba(6, 182, 212, 0.3);
+    border-radius: 0.625rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 75px;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.langButton:hover {
+    border-color: rgba(6, 182, 212, 0.6);
+    background: rgba(6, 182, 212, 0.08);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(6, 182, 212, 0.2);
+}
+
+.arrow {
+    font-size: 0.5rem;
+    transition: transform 0.3s ease;
+    opacity: 0.7;
+}
+
+.langButton:hover .arrow {
+    opacity: 1;
+    transform: translateY(2px);
+}
+
+.langDropdownMenu {
+    position: absolute;
+    top: calc(100% + 0.625rem);
+    right: 0;
+    background: rgba(15, 23, 42, 0.98);
+    backdrop-filter: blur(20px);
+    border: 1.5px solid rgba(6, 182, 212, 0.2);
+    border-radius: 0.875rem;
+    padding: 0.5rem;
+    min-width: 200px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    animation: slideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 100;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.langOption {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: transparent;
+    border: none;
+    border-radius: 0.625rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+    font-size: 0.9375rem;
+}
+
+.langOption:hover {
+    background: rgba(6, 182, 212, 0.1);
+    color: rgba(255, 255, 255, 1);
+    transform: translateX(4px);
+}
+
+.langOption.active {
+    background: var(--gradient-primary);
+    color: white;
+    box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);
+}
+
+/* CTA Button - Красивая кнопка */
+.ctaButton {
+    padding: 0.625rem 1.5rem;
+    background: var(--gradient-primary);
+    border: none;
+    border-radius: 2rem;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-block;
+    box-shadow: 0 4px 16px rgba(6, 182, 212, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.ctaButton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.ctaButton:hover::before {
+    opacity: 1;
+}
+
+.ctaButton:hover {
+    box-shadow: 0 8px 24px rgba(6, 182, 212, 0.5);
+    transform: translateY(-2px);
+}
+
+.ctaButton:active {
+    transform: translateY(0);
+}
+
+.mobileMenuButton {
+    display: none;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1.5px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    color: var(--color-text-primary);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.mobileMenuButton:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(6, 182, 212, 0.5);
+}
+
+/* Mobile Menu */
+.mobileMenu {
+    display: none;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background: rgba(2, 6, 23, 0.98);
+    backdrop-filter: blur(20px);
+    padding: var(--spacing-xl);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: all var(--transition-base);
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+}
+
+.mobileMenu.open {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.mobileNavLinks {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.mobileNavLink {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.125rem;
+    transition: all 0.3s ease;
+    padding: var(--spacing-md);
+    border-radius: 0.75rem;
+}
+
+.mobileNavLink:hover {
+    color: white;
+    background: rgba(6, 182, 212, 0.1);
+}
+
+.mobileLangSelector {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mobileLangSelector .langButton {
+    flex: 1;
+    max-width: 80px;
+    justify-content: center;
+}
+
+.mobileLangSelector .langButton .arrow {
+    display: none;
+}
+
+.mobileLangSelector .langButton.active {
+    background: var(--gradient-primary);
+    border-color: transparent;
+    box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navLinks {
+        display: none;
+    }
+
+    .mobileMenuButton {
+        display: block;
+    }
+
+    .mobileMenu {
+        display: block;
+    }
+
+    .navContainer {
+        padding: 1rem var(--spacing-md);
+    }
+
+    .logoText {
+        font-size: 1.25rem;
+    }
+
+    .logoIcon {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}
