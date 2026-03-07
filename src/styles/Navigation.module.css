@@ -6,7 +6,7 @@
     left: 0;
     right: 0;
     z-index: 50;
-    background: rgba(2, 6, 23, 0.95);
+    background: var(--color-bg-primary);
     backdrop-filter: blur(20px);
     transition: all var(--transition-base);
 
@@ -269,7 +269,7 @@
     top: 80px;
     left: 0;
     right: 0;
-    background: rgba(2, 6, 23, 0.98);
+    background: var(--color-bg-primary);
     backdrop-filter: blur(20px);
     padding: var(--spacing-xl);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -278,6 +278,7 @@
     transition: all var(--transition-base);
     max-height: calc(100vh - 80px);
     overflow-y: auto;
+    z-index: 60;
 }
 
 .mobileMenu.open {
@@ -333,6 +334,11 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+    .navigation {
+        padding-top: env(safe-area-inset-top);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    }
+
     .navLinks {
         display: none;
     }
@@ -343,6 +349,8 @@
 
     .mobileMenu {
         display: block;
+        top: calc(72px + env(safe-area-inset-top));
+        max-height: calc(100vh - (72px + env(safe-area-inset-top)));
     }
 
     .navContainer {

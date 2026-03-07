@@ -81,6 +81,16 @@ body {
     overflow-x: hidden;
 }
 
+.app {
+    padding-top: 80px;
+}
+
+@media (max-width: 768px) {
+    .app {
+        padding-top: calc(72px + env(safe-area-inset-top));
+    }
+}
+
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
