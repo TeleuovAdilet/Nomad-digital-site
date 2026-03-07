@@ -43,23 +43,21 @@ const Navigation: React.FC = () => {
 
     return (
         <>
-            <nav className={`${styles.navigation} ${isScrolled ? styles.scrolled : ''}`}>
-                <div className={`container ${styles.navContainer}`}>
-                    <a href="#" className={styles.logo}>
-                        <div className={styles.logoIcon}>N</div>
-                        <span className={styles.logoText}>Nomad Digital</span>
-                    </a>
+            <header>
+                <nav className={`${styles.navigation} ${isScrolled ? styles.scrolled : ''}`}>
+                    <div className={`container ${styles.navContainer}`}>
+                        <a href="#" className={styles.logo}>
+                            <div className={styles.logoIcon}>N</div>
+                            <span className={styles.logoText}>Nomad Digital</span>
+                        </a>
 
-                    <div className={styles.navLinks}>
-                        <a href="#services" className={styles.navLink}>
-                            {t('nav.services')}
-                        </a>
-                        <a href="#portfolio" className={styles.navLink}>
-                            {t('nav.portfolio')}
-                        </a>
-                        <a href="#process" className={styles.navLink}>
-                            {t('nav.process')}
-                        </a>
+                        <div className={styles.navLinks}>
+                            <a href="#services" className={styles.navLink}>
+                                {t('nav.services')}
+                            </a>
+                            <a href="#process" className={styles.navLink}>
+                                {t('nav.process')}
+                            </a>
 
                         {/* Dropdown Language Selector */}
                         <div className={styles.languageDropdown}>
@@ -94,28 +92,26 @@ const Navigation: React.FC = () => {
                             )}
                         </div>
 
-                        <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className={styles.ctaButton}>
-                            {t('nav.contact')}
-                        </a>
-                    </div>
+                            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className={styles.ctaButton}>
+                                {t('nav.contact')}
+                            </a>
+                        </div>
 
-                    <button
-                        className={styles.mobileMenuButton}
-                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        aria-label="Toggle menu"
-                    >
-                        {isMobileMenuOpen ? '✕' : '☰'}
-                    </button>
-                </div>
-            </nav>
+                        <button
+                            className={styles.mobileMenuButton}
+                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                            aria-label="Toggle menu"
+                        >
+                            {isMobileMenuOpen ? '✕' : '☰'}
+                        </button>
+                    </div>
+                </nav>
+            </header>
 
             <div className={`${styles.mobileMenu} ${isMobileMenuOpen ? styles.open : ''}`}>
                 <div className={styles.mobileNavLinks}>
                     <a href="#services" className={styles.mobileNavLink} onClick={handleNavClick}>
                         {t('nav.services')}
-                    </a>
-                    <a href="#portfolio" className={styles.mobileNavLink} onClick={handleNavClick}>
-                        {t('nav.portfolio')}
                     </a>
                     <a href="#process" className={styles.mobileNavLink} onClick={handleNavClick}>
                         {t('nav.process')}
